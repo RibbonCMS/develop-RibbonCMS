@@ -1,4 +1,7 @@
+.vscode/
+
 front/
 front_contents/
 side_m/
 issue/*.txt
+docker-compose-main.yml
