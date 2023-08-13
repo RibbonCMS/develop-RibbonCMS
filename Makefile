@@ -25,11 +25,11 @@ copy_contents:
 
 .PHONY: build
 build:
-	docker compose -f docker-compose-main.yml run --rm --service-ports node sh -c "cd front/src && npm ci && npm run build"
+	docker compose -f docker-compose-main.yml run --rm node sh -c "cd front/src && npm ci && npm run build"
 
 .PHONY: export
 export:
-	docker compose -f docker-compose-main.yml run --rm --service-ports node sh -c "cd front/src && npm ci && npm run export"
+	docker compose -f docker-compose-main.yml run --rm node sh -c "cd front/src && npm ci && npm run export"
 
 .PHONY: dev
 dev:
