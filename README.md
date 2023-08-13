@@ -24,6 +24,43 @@ $ git clone git@github.com:<SIDE_F_REPO>.git ./front
 $ make setup
 ```
 
-## 開発
+## `issue_builder.yml` の処理をローカルで再現する
 
-Makefile に書かれているコマンドを利用してください。
+```
+$ make closed
+$ make copy_contents
+$ make build
+$ make export
+```
+
+## sideF の画面を localhost で確認する
+
+1. 初回や sideM に更新がある場合、次のコマンドを実行してください
+
+```
+$ make closed
+$ make copy_contents
+```
+
+2. 次のコマンドを実行します
+
+```
+$ make dev
+```
+
+## sideF を 1 から新規開発する場合
+
+1. sideF に `front_contents/`ディレクトリを作成し、そこへサンプルデータを格納してください
+
+2. 次のコマンドを実行してサンプルデータを sideF のそれぞれの場所へコピーします
+
+```
+$ make closed_from_sidef
+$ make copy_contents
+```
+
+3. 次のコマンドを実行して sideF の画面を localhost で確認します
+
+```
+$ make dev
+```

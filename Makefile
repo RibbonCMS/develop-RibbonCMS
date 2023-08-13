@@ -11,6 +11,10 @@ setup:
 	docker compose -f docker-compose-front.yml -f docker-compose-side-m.yml -f docker-compose-integrate.yml config > docker-compose-main.yml
 	rm -f docker-compose-front.yml docker-compose-side-m.yml
 
+.PHONY: closed_from_sidef
+closed_from_sidef:
+	cp -r front/front_contents/ ./
+
 .PHONY: closed
 closed:
 	docker compose -f docker-compose-main.yml run --rm python sh -c "cd side_m/ && python closed.py"
